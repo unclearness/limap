@@ -28,8 +28,23 @@ To install the LIMAP Python package:
 ```
 git submodule update --init --recursive
 python -m pip install -r requirements.txt
-python -m pip install -Ive . 
+python -m pip install -Ive .
 ```
+
+### Using uv (optional)
+
+If you prefer to manage the virtual environment with [uv](https://docs.astral.sh/uv/),
+you can mirror the above steps with the helper script:
+
+```
+git submodule update --init --recursive
+bash scripts/setup_uv_env.sh
+```
+
+The script creates a `.venv` directory by default (override with `UV_VENV_PATH`)
+and runs `uv sync` to resolve the dependencies declared in `pyproject.toml`,
+including an editable installation of LIMAP. After it finishes, activate the
+environment and verify the installation as described below.
 To double check if the package is successfully installed:
 ```
 python -c "import limap; print(limap.__version__)"

@@ -1,0 +1,70 @@
+[build-system]
+requires = [
+  "setuptools>=64",
+  "wheel",
+  "cmake>=3.17",
+  "ninja"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "limap"
+version = "1.0.0"
+description = "A toolbox for mapping and localization with line features"
+readme = "README.md"
+requires-python = ">=3.9,<3.12"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Shaohui Liu", email = "b1ueber2y@gmail.com" }
+]
+keywords = ["mapping", "localization", "computer vision", "3d lines"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "License :: OSI Approved :: BSD License",
+  "Operating System :: OS Independent"
+]
+dependencies = [
+  "pyyaml",
+  "tqdm",
+  "attrdict",
+  "h5py",
+  "scipy",
+  "matplotlib",
+  "seaborn",
+  "tensorboardX",
+  "opencv-python",
+  "opencv-contrib-python",
+  "scikit-learn",
+  "scikit-image",
+  "bresenham",
+  "pyvista",
+  "omegaconf",
+  "plyfile",
+  "pathlib",
+  "imagesize",
+  "einops",
+  "ninja",
+  "yacs",
+  "pytest",
+  "numpy<=1.26.4",
+  "open3d==0.18.0",
+  "pycolmap>=3.12.1",
+  "ruff==0.6.7",
+  "clang-format==19.1.0",
+  "pytlsd @ git+https://github.com/iago-suarez/pytlsd.git@4180ab8",
+  "deeplsd @ git+https://github.com/cvg/DeepLSD.git@88c589d",
+  "gluestick @ git+https://github.com/cvg/GlueStick.git@7d81673",
+  "hloc @ git+https://github.com/B1ueber2y/Hierarchical-Localization.git@dfe106a"
+]
+
+[project.urls]
+Homepage = "https://github.com/cvg/limap"
+Documentation = "https://b1ueber2y.me/projects/LIMAP/docs/"
+Source = "https://github.com/cvg/limap"
+Issues = "https://github.com/cvg/limap/issues"
+
+[tool.setuptools]
+packages = { find = { include = ["limap*"] } }
